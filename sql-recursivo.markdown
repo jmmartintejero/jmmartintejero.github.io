@@ -216,7 +216,7 @@ WITH RECURSIVE Hilos AS (
              id_padre,
              comentario
   FROM       Comentarios
-  WHERE      id_padre = 2
+  WHERE      id_comentario = 2
 ```
 
 - Recursión
