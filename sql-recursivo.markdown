@@ -310,7 +310,7 @@ UNION ALL
 |             6 |        2 | Sexto comentario    |     1 |
 ```
 
-- Última Recursión. El último resultado se alimenta a través de **Hilos**, pero esta vez no produce más condiciones de cruce (join), produciéndose la Parada.
+- Parada. Última Recursión. El último resultado se alimenta a través de **Hilos**, pero esta vez no produce más condiciones de cruce (join), produciéndose la Parada.
 
 ```sql
 Comentarios c INNER JOIN Hilos h ON 
