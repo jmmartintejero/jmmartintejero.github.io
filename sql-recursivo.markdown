@@ -293,7 +293,7 @@ Viendo la ejecución paso a paso quedaría:
 |             2 |        1 | Segundo comentario  |     0 |
 ```
 
-- Recursión. La primera fila **nivel 0** se alimenta para el cruce (join) a través de **Hilos**  (etapa de Recursión). El resultado de este cruce (join) **nivel 1** se alimenta de nuevo para el cruce (continúa Recursión) dando sucesivos **niveles 2** o más: 3, 4,... hasta que la condición de cruce no se cumpla actuando de Parada.
+- Recursión. La primera fila **nivel 0** se alimenta para el cruce (join) a través de **Hilos**. El resultado de este cruce (join) **nivel 1** se alimenta de nuevo para el cruce (continúa Recursión) dando sucesivos **niveles 2** o más: 3, 4,... hasta que la condición de cruce no se cumpla.
 
 ```sql
 UNION ALL
