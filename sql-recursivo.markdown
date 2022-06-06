@@ -154,12 +154,29 @@ Cuya salida será todo el árbol de comentarios para el nodo padre 2:
 |             7 |        3 | Séptimo comentario  |
 +---------------+----------+---------------------+
 ```
+En este listado se excluye el comentario 2. Es fácil modificar la consulta para que se muestre también dicho comentario:
+
+```sql
+WITH RECURSIVE hilos AS (
+  SELECT     id_comentario,
+             id_padre,
+             comentario
+  FROM       Comentarios
+  WHERE      id_comentario = 2
+  UNION ALL
+  SELECT     c.id_comentario,
+             c.id_padre,
+             c.comentario
+  FROM       Comentarios c INNER JOIN hilos h ON 
+			 c.id_padre = h.id_comentario)
+SELECT * FROM hilos ORDER BY id_padre, id_comentario;
+```
 
 Es decir:
 
 ```
-Estructura de comentarios para el nodo 2
-----------------------------------------
+Estructura de comentarios para el nodo 2 incluyéndolo
+-----------------------------------------------------
                     │
                  ┌──┴──┐
                  │  2  │
