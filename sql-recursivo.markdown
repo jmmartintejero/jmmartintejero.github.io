@@ -135,11 +135,11 @@ WITH RECURSIVE hilos AS (
   FROM       Comentarios
   WHERE      id_padre = 2
   UNION ALL
-  SELECT     C.id_comentario,
-             C.id_padre,
-             C.comentario
-  FROM       Comentarios C INNER JOIN hilos h ON 
-			 C.id_padre = h.id_comentario)
+  SELECT     c.id_comentario,
+             c.id_padre,
+             c.comentario
+  FROM       Comentarios c INNER JOIN hilos h ON 
+			 c.id_padre = h.id_comentario)
 SELECT * FROM hilos ORDER BY id_padre, id_comentario;
 ```
 
@@ -206,17 +206,17 @@ WITH RECURSIVE hilos AS (
 
 ```sql
   UNION ALL
-  SELECT     C.id_comentario,
-             C.id_padre,
-             C.comentario
-  FROM       Comentarios C INNER JOIN hilos h ON 
-			 C.id_padre = h.id_comentario)
+  SELECT     c.id_comentario,
+             c.id_padre,
+             c.comentario
+  FROM       Comentarios c INNER JOIN hilos h ON 
+			 c.id_padre = h.id_comentario)
 ```
 - Parada
 
 ```sql
-Comentarios C INNER JOIN hilos h ON 
-			 C.id_padre = h.id_comentario
+Comentarios c INNER JOIN hilos h ON 
+			 c.id_padre = h.id_comentario
 ```
 
 - Resultado
