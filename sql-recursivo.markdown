@@ -154,7 +154,7 @@ Cuya salida será todo el árbol de comentarios para el nodo padre 2:
 |             7 |        3 | Séptimo comentario  |
 +---------------+----------+---------------------+
 ```
-En este listado se excluye el comentario 2. Es fácil modificar la consulta para que se muestre también dicho comentario:
+En este listado se excluye el comentario 2. Es fácil modificar la consulta para que se muestre también dicho comentario cambiando la condición de id_padre por id_comentario:
 
 ```sql
 WITH RECURSIVE Hilos AS (
