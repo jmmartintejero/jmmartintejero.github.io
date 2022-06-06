@@ -184,3 +184,44 @@ Estructura de comentarios para el nodo 2
 
 ```
 
+En esta query recursiva se pueden identificar  partes:
+
+ - Declaración
+
+```sql
+WITH RECURSIVE hilos AS (
+```
+
+- Semilla
+
+```sql
+  SELECT     id_comentario,
+             id_padre,
+             comentario
+  FROM       Comentarios
+  WHERE      id_padre = 2
+```
+
+- Recursión
+
+```sql
+  UNION ALL
+  SELECT     C.id_comentario,
+             C.id_padre,
+             C.comentario
+  FROM       Comentarios C INNER JOIN hilos h ON 
+			 C.id_padre = h.id_comentario)
+```
+- Parada
+
+```sql
+Comentarios C INNER JOIN hilos h ON 
+			 C.id_padre = h.id_comentario
+```
+
+- Resultado
+
+```sql
+SELECT * FROM hilos ORDER BY id_padre, id_comentario;
+```
+
