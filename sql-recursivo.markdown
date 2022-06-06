@@ -203,13 +203,13 @@ Estructura de comentarios para el nodo 2 incluyéndolo
 
 En esta query recursiva se pueden identificar  partes:
 
- - Declaración
+ - Declaración.
 
 ```sql
 WITH RECURSIVE Hilos AS (
 ```
 
-- Semilla
+- Semilla.
 
 ```sql
   SELECT     id_comentario,
@@ -219,7 +219,7 @@ WITH RECURSIVE Hilos AS (
   WHERE      id_comentario = 2
 ```
 
-- Recursión
+- Recursión.
 
 ```sql
   UNION ALL
@@ -229,14 +229,14 @@ WITH RECURSIVE Hilos AS (
   FROM       Comentarios c INNER JOIN Hilos h ON 
 			 c.id_padre = h.id_comentario)
 ```
-- Parada
+- Parada.
 
 ```sql
 Comentarios c INNER JOIN Hilos h ON 
 			 c.id_padre = h.id_comentario
 ```
 
-- Resultado
+- Resultado.
 
 ```sql
 SELECT * FROM Hilos ORDER BY id_padre, id_comentario;
