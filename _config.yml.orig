@@ -18,6 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+<<<<<<< HEAD
+title: Base de datos - José Manuel Martín Tejero
+email: 
+description: >- # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: 
+github_username:  
+=======
 title: Base de datos por José Manuel Martín Tejero
 email:
 description: >- # this means to ignore newlines until "baseurl:"
@@ -25,7 +34,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
-github_username:  
+github_username:  toteabe
+>>>>>>> 5002b8bfce61d7f2e2621ff7f16cf324e15d2e1a
 
 # Build settings
 theme: minima
