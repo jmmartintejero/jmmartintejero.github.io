@@ -242,3 +242,34 @@ Comentarios c INNER JOIN hilos h ON
 SELECT * FROM hilos ORDER BY id_padre, id_comentario;
 ```
 
+Una forma de visualizar la recursión es introduciendo una columna de nivel que se va incrementando recursivamente con cada fila que se añade a la tabla base CTE (Common Table Expression) *hilos*.
+
+```sql
+WITH RECURSIVE hilos AS (
+  SELECT     id_comentario,
+             id_padre,
+             comentario,
+             0 as nivel
+  FROM       Comentarios
+  WHERE      id_comentario = 2
+  UNION ALL
+  SELECT     c.id_comentario,
+             c.id_padre,
+             c.comentario, 
+             h.nivel+1 as nivel
+  FROM       Comentarios c INNER JOIN hilos h ON 
+			 c.id_padre = h.id_comentario)
+SELECT * FROM hilos ORDER BY id_padre, id_comentario;
+```
+
+```console
++---------------+----------+---------------------+-------+
+| id_comentario | id_padre | comentario          | nivel |
++---------------+----------+---------------------+-------+
+|             2 |        1 | Segundo comentario  |     0 |
+|             3 |        2 | Tercer comentario   |     1 |
+|             6 |        2 | Sexto comentario    |     1 |
+|             7 |        3 | Séptimo comentario  |     2 |
++---------------+----------+---------------------+-------+
+```
+
