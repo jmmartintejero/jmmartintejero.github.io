@@ -10,6 +10,9 @@ Se quiere implementar un foro donde los lectores de un hilo pueden contribuir co
 
 Se considera un modelo de base de datos con una sola tabla Comentarios y una relación reflexiva 1:N id_comentario -> id_padre.
 
+![Comentarios](Comentarios.png)
+![Relación reflexiva Comentarios](RelacionReflexivaComentarios.png)
+
 ``` sql
 CREATE TABLE Comentarios (
     id_comentario   SERIAL PRIMARY KEY,
@@ -82,8 +85,6 @@ VALUES
 'Séptimo comentario');
 ```
 
-![Comentarios](comentarios.png)
-
 ```
 Estructura de ejemplo de comentarios
 ------------------------------------
@@ -104,7 +105,6 @@ Estructura de ejemplo de comentarios
         │            │              │
         │            │              │
         │            │              │
-        │            │              │
      ┌──┴──┐      ┌──┴──┐        ┌──┴──┐
      │  6  │      │  3  │        │  5  │
      │     │      │     │        │     │
@@ -120,8 +120,6 @@ Estructura de ejemplo de comentarios
 
 
 ```
-
-Si creamos la base de datos con el cliente mysql:
 
 Con MySQL 8+ tenemos disponible la opción de implementar consultas recursivas con la cláusula WITH:
 
@@ -140,8 +138,7 @@ WITH RECURSIVE hilos AS (
   SELECT     C.id_comentario,
              C.id_padre,
              C.comentario
-  FROM       Comentarios C INNER JOIN hilos h
-			 ON 
+  FROM       Comentarios C INNER JOIN hilos h ON 
 			 C.id_padre = h.id_comentario)
 SELECT * FROM hilos ORDER BY id_padre, id_comentario;
 ```
@@ -168,7 +165,6 @@ Estructura de comentarios para el nodo 2
                  │  2  │
        ┌─────────┤     │
        │         └──┬──┘
-       │            │
        │            │
        │            │
        │            │
