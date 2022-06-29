@@ -4,9 +4,9 @@ title: SQL Recursivo
 permalink: /sql-recursivo/
 ---
 
-# Escenario de un foro con múltiples Hilos de comentarios
+# Escenario de un foro con hilos de comentarios
 
-Se quiere implementar un foro donde los lectores de un hilo pueden contribuir con comentarios e incluso responderse formándose Hilos de discusión.
+Se quiere implementar un foro donde los lectores pueden contribuir con comentarios y responderse formándose hilos de discusión.
 
 Se considera un modelo de base de datos con una sola tabla Comentarios y una relación reflexiva 1:N id_comentario -> id_padre.
 
@@ -14,6 +14,7 @@ Se considera un modelo de base de datos con una sola tabla Comentarios y una rel
 ![Relación reflexiva Comentarios](RelacionReflexivaComentarios.png)
 
 ``` sql
+-- DDL
 CREATE TABLE Comentarios (
     id_comentario   SERIAL PRIMARY KEY,
     id_padre        BIGINT UNSIGNED,
@@ -21,6 +22,8 @@ CREATE TABLE Comentarios (
     FOREIGN KEY (id_padre) REFERENCES Comentarios(id_comentario)
 );
 
+
+-- DML 
 INSERT INTO Comentarios
 (id_comentario,
 id_padre,
