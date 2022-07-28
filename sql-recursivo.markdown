@@ -14,7 +14,8 @@ Se considera un modelo de base de datos con una sola tabla Comentarios y una rel
 ![Relación reflexiva Comentarios](RelacionReflexivaComentarios.png)
 
 ``` sql
--- DDL
+
+-- DDL:
 CREATE TABLE Comentarios (
     id_comentario   SERIAL PRIMARY KEY,
     id_padre        BIGINT UNSIGNED,
@@ -22,8 +23,7 @@ CREATE TABLE Comentarios (
     FOREIGN KEY (id_padre) REFERENCES Comentarios(id_comentario)
 );
 
-
--- DML 
+-- DML: 
 INSERT INTO Comentarios
 (id_comentario,
 id_padre,
@@ -124,11 +124,11 @@ Estructura de ejemplo de comentarios
 
 ```
 
-Con MySQL 8+ tenemos disponible la opción de implementar consultas recursivas con la cláusula WITH:
+Con MySQL 8+ podemos implementar consultas recursivas con la cláusula WITH:
 
 [With Recursivo Mysql](https://dev.mysql.com/doc/refman/8.0/en/with.html#common-table-expressions-recursive)
 
-Con esta cláusula podemos cargar los comentarios para cualquier nivel con una recursión como la siguiente:
+Por ejemplo, cargar los comentarios que penden de un comentario dado:
 
 ```sql
 WITH RECURSIVE Hilos AS (
