@@ -6,9 +6,9 @@ permalink: /sql-window/
 
 # Escenario de ventas
 
-Se quieren implementar análisis avanzados de funciones agregadas sobre ventanas en una base de datos de ventas. 
+Se quieren implementar análisis avanzados de funciones agregadas sobre ventanas en una base de datos de un negocio con una única tabla de Ventas. 
 
-Se considera un modelo de base de datos con una sola tabla Ventas.
+Se considera un modelo de base de datos de la tabla Ventas:
 
 ![Ventas](Ventas.png)
 
