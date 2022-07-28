@@ -2,7 +2,7 @@
 layout: page
 title: SQL Window
 permalink: /sql-window/
---
+---
 
 # Escenario de ventas
 
