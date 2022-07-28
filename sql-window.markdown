@@ -10,8 +10,8 @@ Se quieren implementar análisis avanzados de funciones agregadas sobre ventanas
 
 Se considera un modelo de base de datos con una sola tabla Ventas.
 
-![Comentarios](Comentarios.png)
-![Relación reflexiva Comentarios](RelacionReflexivaComentarios.png)
+![Ventas](Ventas.png)
+
 
 ``` sql
 
