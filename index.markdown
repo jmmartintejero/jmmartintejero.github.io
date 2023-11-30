@@ -8,7 +8,6 @@ title: Índice de Contenido
 
 [SQL Recursivo](/sql-recursivo)
 
-[SQL Window](/sql-window)
 <p>
 <strong>Conforme Evidencia 3_Creación y/o modificación de un Material Educativo Digital del Curso COMPETENCIA DIGITAL DOCENTE NIVEL A2 (249923KPF426)</strong>
 </p>
